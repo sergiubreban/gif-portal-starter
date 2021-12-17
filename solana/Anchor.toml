@@ -1,0 +1,13 @@
+[programs.devnet]
+firstproject = "DLroEbXzke7x4rzwenkNa5XNy9pQuwtzjzutNhYnprGn"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "devnet"
+wallet = "/Users/sergiubreban/.config/solana/id.json"
+
+[scripts]
+test = "node tests/firstproject.js"
+# test = "yarn run mocha -t 1000000 tests/"

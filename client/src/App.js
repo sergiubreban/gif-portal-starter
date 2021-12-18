@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import './App.css';
-import { Box, Button, useColorMode, Text } from '@chakra-ui/react';
+import { Box, Button, useColorMode, Text, Stack } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import NewGifForm from './components/NewGifForm';
 import { checkIfWalletIsConnected, connectWallet, createGifAccount, getGifList } from './utils';
 import GifItem from './components/GifItem';
+// Import the functions you need from the SDKs you need
 
 const App = () => {
   const [walletAddress, setWalletAddress] = useState(null);
@@ -35,9 +36,12 @@ const App = () => {
   return (
     <div className="App">
       <Box position='absolute' p='2' top='0' right='0'>
-        <Button variant='simple' onClick={ toggleColorMode }>
-          { colorMode === 'light' ? <MoonIcon /> : <SunIcon /> }
-        </Button>
+        <Stack spacing={ 2 } direction='row' alignItems='center'>
+          <a href='https://github.com/sergiubreban/gif-portal-starter' target='_blank' rel="noreferrer"><Text>github</Text></a>
+          <Button variant='simple' onClick={ toggleColorMode }>
+            { colorMode === 'light' ? <MoonIcon /> : <SunIcon /> }
+          </Button>
+        </Stack>
       </Box>
       <div className={ walletAddress ? "authed-container" : "container" }>
         <div className="header-container">
